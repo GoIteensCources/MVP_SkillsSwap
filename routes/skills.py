@@ -120,7 +120,7 @@ async def update_skill(skill_id: int, skill_update: SkillUpdate):
 
 
     stored_skill = skills_db[skill_id]
-    update_data = skill_update.dict(exclude_unset=True)
+    update_data = skill_update.model_dump(exclude_unset=True)
 
 
     for field, value in update_data.items():
